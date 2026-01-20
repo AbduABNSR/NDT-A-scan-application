@@ -1,0 +1,1 @@
+Android-based A-scan visualization app for ultrasonic Non-Destructive Testing (NDT). The app receives echo amplitude data from an external microcontroller and displays real-time A-scan waveforms for basic defect detection, signal analysis, and educational NDT experiments.
