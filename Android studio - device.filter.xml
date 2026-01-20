@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Arduino official -->
+    <usb-device vendor-id="2341" />
+
+    <!-- Atmel / Microchip -->
+    <usb-device vendor-id="9025" />
+
+    <!-- CH340 / CH341 clones (1A86 hex = 6790 decimal) -->
+    <usb-device vendor-id="6790" />
+</resources>
