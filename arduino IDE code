@@ -1,0 +1,36 @@
+const int trigPin = 5;
+const int echoPin = 7;
+const int ampPin  = A0;
+
+unsigned long echoTime;   // microseconds
+int amplitude;            // ADC value (0–1023)
+
+void setup() {
+  Serial.begin(9600);
+
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  digitalWrite(trigPin, LOW);
+}
+
+void loop() {
+  // Trigger HC-SR04
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  // Read time of flight
+  echoTime = pulseIn(echoPin, HIGH, 30000); // timeout ~30 ms
+
+  // Read amplitude
+  amplitude = analogRead(ampPin);
+
+  // Output: amplitude,time_of_flight
+  Serial.print(amplitude);
+  Serial.print(",");
+  Serial.println(echoTime);
+
+  delay(20); // ~50 Hz
+}
